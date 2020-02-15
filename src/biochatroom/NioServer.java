@@ -10,6 +10,8 @@ import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.Set;
 
+
+//具体NIO解耦实现见模块niochatroom
 public class NioServer {
 
     public static void main(String[] args) throws IOException {
