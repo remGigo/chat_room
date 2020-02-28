@@ -36,7 +36,8 @@ public class NioServer {
 
         for (;;) { // 一看就是写过go的哈哈                         //6. 循环等待新接入的连接
 
-            int readyChannels = selector.select();                    //获取可用channel数量(这是一个阻塞方法~ )
+            //这是核心方法，具体实现OS底层对IO的支持不同而不同。
+            int readyChannels = selector.select();              //作用是获取已就绪channel数量(这是一个阻塞方法~ )
 
             if (readyChannels == 0) continue;                         //为什么要这样？好像是因为原生的NIO有点bug
 
